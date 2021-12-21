@@ -88,37 +88,37 @@ main {
 .panel:hover .schedule-text {
   background-color: var(--Desaturatedblue);
 }
-.work {
+.panel:nth-child(2) {
   background-color: var(--Lightred);
 }
-.play {
+.panel:nth-child(3) {
   background-color: var(--Softblue);
 }
-.study {
+.panel:nth-child(4) {
   background-color: var(--Lightred2);
 }
-.exercise {
+.panel:nth-child(5) {
   background-color: var(--Limegreen);
 }
-.social {
+.panel:nth-child(6) {
   background-color: var(--Violet);
 }
-.self-care {
+.panel:nth-child(7) {
   background-color: var(--Softorange);
 }
 .schedule-img {
   width: 120px;
   border-radius: 20px;
-  margin-left: auto;
   padding: 0 20px;
-  position: relative;
+  position: absolute;
+  right: 0;
   top: -8px;
 }
 .schedule-img img {
   width: 100%;
 }
 .schedule-text {
-  position: absolute;
+  position: relative;
   top: 40px;
   padding: 20px;
   border-radius: 20px;
@@ -158,7 +158,6 @@ main {
     grid-row-gap: 3rem;
     grid-auto-rows: minmax(200px, auto);
     width: 90%;
-    max-width: 1000px;
   }
   .control-panel {
     grid-column: 1;
@@ -185,17 +184,27 @@ main {
     height: 30%;
   }
   .panel {
-    height: 200px;
+    height: 230px;
   }
   .schedule-text {
     height: 100%;
+    display: flex;
+    flex-direction: column;
   }
   .duration {
     flex-direction: column;
     align-items: flex-start;
+    margin-top: 30px;
   }
+
   .duration p {
     padding-top: 10px;
     margin-left: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 60%;
   }
 }
