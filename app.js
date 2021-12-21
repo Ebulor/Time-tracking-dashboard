@@ -24,7 +24,6 @@ function tracker(data) {
     const time = document.createElement("p");
 
     //append
-
     container.appendChild(card);
     card.appendChild(scheduleImg);
     card.appendChild(scheduleTxt);
@@ -70,6 +69,17 @@ function tracker(data) {
       hour.innerHTML = data[i].timeframes.monthly.current + "hrs";
       time.innerHTML =
         "Last month - " + data[i].timeframes.monthly.previous + "hrs";
+    });
+
+    //adding active class to controls
+    const controls = document.querySelectorAll(".control");
+    controls.forEach((control) => {
+      control.addEventListener("click", () => {
+        controls.forEach((control) => {
+          control.classList.remove("active");
+        });
+        control.classList.add("active");
+      });
     });
   }
 }

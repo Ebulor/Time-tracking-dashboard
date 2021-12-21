@@ -60,6 +60,7 @@ main {
   color: white;
   font-weight: 300;
   font-size: 18px;
+  width: 50%;
 }
 .profile-text p span {
   font-size: 13px;
@@ -78,6 +79,9 @@ main {
 .controls a:hover {
   color: white;
 }
+.control.active {
+  color: white;
+}
 .panel {
   border-radius: 20px;
   position: relative;
@@ -88,34 +92,37 @@ main {
 .panel:hover .schedule-text {
   background-color: var(--Desaturatedblue);
 }
-.panel:nth-child(2) {
+.panel:nth-child(2) .schedule-img {
   background-color: var(--Lightred);
 }
-.panel:nth-child(3) {
+.panel:nth-child(3) .schedule-img {
   background-color: var(--Softblue);
 }
-.panel:nth-child(4) {
+.panel:nth-child(4) .schedule-img {
   background-color: var(--Lightred2);
 }
-.panel:nth-child(5) {
+.panel:nth-child(5) .schedule-img {
   background-color: var(--Limegreen);
 }
-.panel:nth-child(6) {
+.panel:nth-child(6) .schedule-img {
   background-color: var(--Violet);
 }
-.panel:nth-child(7) {
+.panel:nth-child(7) .schedule-img {
   background-color: var(--Softorange);
 }
 .schedule-img {
-  width: 120px;
   border-radius: 20px;
   padding: 0 20px;
   position: absolute;
   right: 0;
-  top: -8px;
+  top: -11px;
+  width: 100%;
+  height: 100%;
 }
 .schedule-img img {
-  width: 100%;
+  width: 76px;
+  position: relative;
+  left: 60%;
 }
 .schedule-text {
   position: relative;
@@ -123,6 +130,7 @@ main {
   padding: 20px;
   border-radius: 20px;
   width: 100%;
+  height: 100%;
   background-color: var(--Darkblue);
 }
 .schedule-text p:first-child {
@@ -163,6 +171,12 @@ main {
     grid-column: 1;
     grid-row: 1/3;
   }
+  .controls {
+    padding: 30px;
+  }
+  .controls a {
+    font-size: 1.2rem;
+  }
   .profile {
     flex-direction: column;
     align-items: flex-start;
@@ -175,8 +189,11 @@ main {
     margin: 20px 0;
   }
   .profile-text p {
-    font-size: 30px;
-    line-height: 2.2rem;
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+  .profile-text p span {
+    font-size: 16px;
   }
   .controls {
     flex-direction: column;
