@@ -47,28 +47,67 @@ function tracker(data) {
 
     //functionality
 
-    hour.innerHTML = data[i].timeframes.daily.current + "hrs";
-    time.innerHTML = "Yesterday - " + data[i].timeframes.daily.previous + "hrs";
+    // hour.innerHTML = data[i].timeframes.daily.current + "hrs";||
+    // time.innerHTML = "Yesterday - " + data[i].timeframes.daily.previous + "hrs";
 
     const day = document.getElementById("day");
+    /*day.addEventListener("click", () => {
+      if (data[i].timeframes.daily.current > 1 ) {
+        hour.innerHTML = data[i].timeframes.daily.current + "hrs";
+      } else {
+        hour.innerHTML = data[i].timeframes.daily.current + "hr";
+      }
+      if (data[i].timeframes.daily.previous > 1) {
+        time.innerHTML =
+          "Yesterday - " + data[i].timeframes.daily.previous + "hrs";
+      } else {
+        time.innerHTML =
+          "Yesterday - " + data[i].timeframes.daily.previous + "hr";
+      }
+    });*/
+    console.log(data[i].timeframes.daily.current);
     day.addEventListener("click", () => {
-      hour.innerHTML = data[i].timeframes.daily.current + "hrs";
-      time.innerHTML =
-        "Yesterday - " + data[i].timeframes.daily.previous + "hrs";
+      if (
+        data[i].timeframes.daily.current > 1 ||
+        data[i].timeframes.daily.previous > 1
+      ) {
+        hour.innerHTML = data[i].timeframes.daily.current + "hrs";
+        time.innerHTML =
+          "Yesterday - " + data[i].timeframes.daily.previous + "hrs";
+      } else {
+        hour.innerHTML = data[i].timeframes.daily.current + "hr";
+        time.innerHTML =
+          "Yesterday - " + data[i].timeframes.daily.previous + "hr";
+      }
     });
 
     const week = document.getElementById("week");
     week.addEventListener("click", () => {
-      hour.innerHTML = data[i].timeframes.weekly.current + "hrs";
-      time.innerHTML =
-        "Last week - " + data[i].timeframes.weekly.previous + "hrs";
+      if (data[i].timeframes.weekly.current > 1) {
+        hour.innerHTML = data[i].timeframes.weekly.current + "hrs";
+        time.innerHTML =
+          "Last week - " + data[i].timeframes.weekly.previous + "hrs";
+      } else {
+        hour.innerHTML = data[i].timeframes.weekly.current + "hr";
+        time.innerHTML =
+          "Last week - " + data[i].timeframes.weekly.previous + "hr";
+      }
     });
 
     const month = document.getElementById("month");
     month.addEventListener("click", () => {
-      hour.innerHTML = data[i].timeframes.monthly.current + "hrs";
-      time.innerHTML =
-        "Last month - " + data[i].timeframes.monthly.previous + "hrs";
+      if (
+        data[i].timeframes.monthly.current > 1 ||
+        data[i].timeframes.monthly.prev > 1
+      ) {
+        hour.innerHTML = data[i].timeframes.monthly.current + "hrs";
+        time.innerHTML =
+          "Last month - " + data[i].timeframes.monthly.previous + "hrs";
+      } else {
+        hour.innerHTML = data[i].timeframes.monthly.current + "hr";
+        time.innerHTML =
+          "Last month - " + data[i].timeframes.monthly.previous + "hr";
+      }
     });
 
     //adding active class to controls
