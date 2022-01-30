@@ -47,20 +47,20 @@ function tracker(data) {
     //functionality
 
     if (
-      data[i].timeframes.daily.current > 1 ||
-      data[i].timeframes.daily.previous > 1
+      data[i].timeframes.weekly.current > 1 ||
+      data[i].timeframes.weekly.previous > 1
     ) {
-      hour.innerHTML = data[i].timeframes.daily.current + "hrs";
+      hour.innerHTML = data[i].timeframes.weekly.current + "hrs";
       time.innerHTML =
-        "Yesterday - " + data[i].timeframes.daily.previous + "hrs";
+        "Last week - " + data[i].timeframes.weekly.previous + "hrs";
     } else {
-      hour.innerHTML = data[i].timeframes.daily.current + "hr";
+      hour.innerHTML = data[i].timeframes.weekly.current + "hr";
       time.innerHTML =
-        "Yesterday - " + data[i].timeframes.daily.previous + "hr";
+        "Last week - " + data[i].timeframes.weekly.previous + "hr";
     }
 
     const day = document.getElementById("day");
-    day.classList.add("active");
+
     day.addEventListener("click", () => {
       if (
         data[i].timeframes.daily.current.value > 1 ||
